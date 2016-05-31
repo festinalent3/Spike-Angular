@@ -7,18 +7,20 @@
   <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controllers.js"></script>
+  <script type="text/javascript" src="ToDoFactory.js"></script>
+  <script type="text/javascript" src="ToDoService.js"></script>
+
 </head>
 <body>
   <div ng-controller="ToDoController as ctlr">
     <p ng-repeat="todo in ctlr.todos">
-      {{todo.task}}: {{ todo.completed ? "completed" : "not completed" }}
-      <span ng-click="todo.complete();">Complete</span>
+      {{todo.text}}: {{ todo.completed ? "completed" : "not completed" }}
+      <button ng-click="todo.complete();">Complete</button>
     </p>
 
     <input type="text" ng-model="todoText">
     <button ng-click='ctlr.addTodo(todoText)'>Add task</button>
     <button ng-click='ctlr.removeTodo()'>Remove last task</button>
   </div>
-
 </body>
 </html>

@@ -3,9 +3,11 @@ toDoApp.factory('ToDoFactory', function(){
 		this.text = todoText;
 		this.completed = (typeof completed !== 'undefined') ? completed : false;
 	};
-	  Todo.prototype.complete = function() {
-    this.completed = true;
-  };
+
+	Todo.prototype.complete = function() {
+		this.completed = true;
+	};
+
 	return Todo;
 
 });
